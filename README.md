@@ -50,13 +50,13 @@ Configuration
    clicking Save. Help descriptions are provided. For reference, here are the
    settings in use on the author's site:
    
-     Class List:
-       wysi-1=wysi_1
-       wysi-2=wysi_2       
-     Link to Original File: Checked     
-     Additional IMG classes: lightbox     
-     IMG REL tag: <not set>     
-     Link Classes: original
+    Class List:
+    wysi-1=wysi_1
+    wysi-2=wysi_2
+    Link to Original File: Checked
+    Additional IMG classes: lightbox
+    IMG REL tag: <not set>
+    Link Classes: original
      
 Usage
 -----
