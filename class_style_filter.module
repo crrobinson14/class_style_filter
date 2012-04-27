@@ -163,18 +163,3 @@ function _class_style_filter_process($text, $filter, $format) {
   
   return str_replace($originals, $replacements, $text);
 }
-
-
-/**
- * Filter tips.
- */
-function _class_style_filter_tips($filter, $format, $long = FALSE) {
-  $replacement = isset($filter->settings['filter_example_foo']) ? $filter->settings['filter_example_foo'] : 'bar';
-  if (!$long) {
-    // This string will be shown in the content add/edit form
-    return t('<em>foo</em> replaced with %replacement.', array('%replacement' => $replacement));
-  }
-  else {
-    return t('Every instance of "foo" in the input text will be replaced with a configurable value. You can configure this value and put whatever you want there. The replacement value is "%replacement".', array('%replacement' => $replacement));
-  }
-}
