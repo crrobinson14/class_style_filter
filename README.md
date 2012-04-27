@@ -39,17 +39,17 @@ Sample Configuration
 --------------------
 The author's site (see the demo URL listed above) uses the following settings:
 
-### WYSIWYG Profile CSS Classes
+#### WYSIWYG Profile CSS Classes
 
     Half-size WYSI=wysi-2
     Full-size WYSI=wysi-1
 
-### Image Styles
+#### Image Styles
 
     wysi_1 - Scale and Crop to 612x459
     wysi_2 - Scale and Crop to 300x225
 
-### Classes to Styles settings under Input Formats
+#### Classes to Styles settings under Input Formats
 
     Class List:
       wysi-1=wysi_1
