@@ -46,9 +46,9 @@ Configuration
    runs BEFORE any filters that correct or block HTML tags, and that any filters
    that block tags are configured to allow IMG tags in the output.
    
-   Classes to Styles has a set of its own options that you should review before
-   clicking Save. Help descriptions are provided. For reference, here are the
-   settings in use on the author's site:
+Classes to Styles has a set of its own options that you should review before
+clicking Save. Help descriptions are provided. For reference, here are the
+settings in use on the author's site:
    
     Class List:
     wysi-1=wysi_1
