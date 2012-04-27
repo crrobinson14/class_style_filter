@@ -24,35 +24,36 @@ Configuration
 1. Download and enable this module.
 
 2. Browse to /admin/config/content/wysiwyg and edit the settings for each
-   WYSIWYG profile you want to support. Add classes that you can apply to
-   images you want processed. The author's example site
-   (http://www.lucubration.com/) uses the following "CSS -> CSS Classes" rule:
+   WYSIWYG profile you want to support. Add a class for each style you
+   eventually want to apply.
 
-     Half-size WYSI=wysi-2
-     Full-size WYSI=wysi-1
-
-   Create one class for each image style you want to make.
-
-3. Browse to /admin/config/media/image-styles and create image styles that the
-   classes should be mapped to. On the author's site, there are two styles:
-
-     wysi_1: Scale and Crop to 612x459 (this is a full-width image)
-     wysi_2: Scale and Crop to 300x225 (this is a half-width image)
-
-   Create one style that each image class will be translated into.
+3. Browse to /admin/config/media/image-styles and create one image styles to
+   receive each of the formats defined in step 2.
 
 4. Browse to /admin/config/content/formats and configure each input format that
    you want the filter to run against. When you enable the filter, be sure it
    runs BEFORE any filters that correct or block HTML tags, and that any filters
    that block tags are configured to allow IMG tags in the output.
    
-Classes to Styles has a set of its own options that you should review before
-clicking Save. Help descriptions are provided. For reference, here are the
-settings in use on the author's site:
-   
+Sample Configuration
+--------------------
+The author's site (see the demo URL listed above) uses the following settings:
+
+### WYSIWYG Profile CSS Classes
+
+    Half-size WYSI=wysi-2
+    Full-size WYSI=wysi-1
+
+### Image Styles
+
+    wysi_1 - Scale and Crop to 612x459
+    wysi_2 - Scale and Crop to 300x225
+
+### Classes to Styles settings under Input Formats
+
     Class List:
-    wysi-1=wysi_1
-    wysi-2=wysi_2
+      wysi-1=wysi_1
+      wysi-2=wysi_2
     Link to Original File: Checked
     Additional IMG classes: lightbox
     IMG REL tag: <not set>
