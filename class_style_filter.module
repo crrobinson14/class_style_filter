@@ -21,8 +21,7 @@ function class_style_filter_filter_info() {
       'link_classes' => '',
     ),
     'settings callback' => '_class_style_filter_settings',
-    'tips callback' => '_class_style_filter_tips',
-    'cache' => FALSE,
+    // 'cache' => FALSE,
   );
 
   return $filters;
