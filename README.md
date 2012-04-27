@@ -8,16 +8,16 @@ decisions regarding thumbnail sizes for embedded files may be easily changed
 later (by simply updating the image style) without having to re-edit existing
 nodes.
 
-It also provides some "glue" support for modules like Lightbox2. The module
-can apply CLASS and REL tags to the image and/or a link wrapper to the original
+It also provides some "glue" support for modules like Lightbox2. The module can
+apply CLASS and REL tags to the image and/or a link wrapper to the original
 file that Lightbox2 can use when displaying galleries.
 
 Demo
 ----
-Visit http://new.lucubration.com/articles/how-hot-wire-shapes-foam for a
-working example. The images on this page were uploaded full-size and then
-configured to use a half-size Scale&Crop filter upon display. Combined with
-Lightbox2, this provides for an easy re-scaling effect.
+Visit http://new.lucubration.com/articles/how-hot-wire-shapes-foam for a working
+example. The images on this page were uploaded full-size and then configured to
+use a half-size Scale&Crop filter upon display. Combined with Lightbox2, this
+provides for an easy re-scaling effect.
 
 Configuration
 -------------
@@ -62,16 +62,16 @@ The author's site (see the demo URL listed above) uses the following settings:
 Usage
 -----
 Usage is simple. When embedding an image in a WYSIWYG field, just select one of
-the classes you defined above to apply to the image. The author uses IMCE
-for file selection, but any module would work as long as you can apply a class
-to the image.
+the classes you defined above to apply to the image. The author uses IMCE for
+file selection, but any module would work as long as you can apply a class to
+the image.
 
 When viewing the page, Classes to Styles will reformat IMG URLs so they use
 Drupal's Image Styles facility to reformat and then cache the files on the
 server. If you have enabled linking to the original file, a link will be wrapped
 around the image to allow the user to view the original file.
 
-If you use Lightbox2, this dovetails nicely into the setting called
-"Custom Class Images" at /admin/config/user-interface/lightbox2/automatic.
-Just enable this handler (the author uses "Lightbox grouped") and add the class
-used above ("lightbox") to the "Custom image trigger classes" setting.
+If you use Lightbox2, this dovetails nicely into the setting called "Custom
+Class Images" at /admin/config/user-interface/lightbox2/automatic. Just enable
+this handler (the author uses "Lightbox grouped") and add the class used above
+("lightbox") to the "Custom image trigger classes" setting.
