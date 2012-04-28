@@ -84,18 +84,24 @@ function _class_style_filter_process($text, $filter, $format) {
       $translate[trim($fields[0])] = trim($fields[1]);
     }
   }
-  if (sizeof($translate) < 1) return $text;
+  if (sizeof($translate) < 1) {
+    return $text;
+  }
 
   // Find all of the images in the current text.
   $count = preg_match_all('|<img(.*)/>|U', $text, $matches);
-  if ($count < 1) return $text;
+  if ($count < 1) {
+    return $text;
+  }
 
   $originals = array();
   $replacements = array();
   foreach ($matches[0] as $tag) {
-    // Build the new class string
+    // Build the new class string.
     preg_match('|class="(.*)"|U', $tag, $class_match);
-    if (sizeof($class_match) < 1) continue;
+    if (sizeof($class_match) < 1) {
+      continue;
+    }
 
     $replace_classes = $class_match[0];
     $append = isset($filter->settings['add_img_class']) ? $filter->settings['add_img_class'] : '';
@@ -110,14 +116,18 @@ function _class_style_filter_process($text, $filter, $format) {
         break;
       }
     }
-    if (!$style) continue;
+    if (!$style) {
+      continue;
+    }
 
     // Set up the IMG SRC tag replacement. We have to jump through a hoop or
     // two because IMCE doesn't add public:// or similar URI schemes, but image
     // filters need them. So we translate the SRC back to a URI scheme path,
     // style it, then translate it back.
     preg_match('|src="(.*)"|U', $tag, $src_match);
-    if (sizeof($src_match) < 1) continue;
+    if (sizeof($src_match) < 1) {
+      continue;
+    }
 
     $replace_src = $src_match[0];
     $original_path = $src_match[1];
@@ -134,7 +144,7 @@ function _class_style_filter_process($text, $filter, $format) {
     $tag_from = array($replace_classes, $replace_src);
     $tag_to = array($new_classes, $new_src);
 
-    // We will need to remove any width or height attributes on the tag
+    // We will need to remove any width or height attributes on the tag.
     preg_match('|width="(.*)"|U', $tag, $width_match);
     if (sizeof($width_match) > 0) {
       $tag_from[] = $width_match[0];
@@ -147,10 +157,10 @@ function _class_style_filter_process($text, $filter, $format) {
       $tag_to[] = '';
     }
 
-    // Convert the tag
+    // Convert the tag.
     $new_tag = str_replace($tag_from, $tag_to, $tag);
 
-    // Now wrap the tag in a link if necessary
+    // Now wrap the tag in a link if necessary.
     if ($settings['original_link']) {
       $options = array('html' => TRUE);
       if (!empty($settings['link_classes'])) {
